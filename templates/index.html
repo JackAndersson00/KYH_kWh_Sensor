@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kWh Readings</title>
+    <style>
+        table {
+            width: 80%;
+            border: 1px black solid;
+            text-align: center;
+        }
+        td {
+            border: 1px black solid;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Sensor</th>
+            <th>Date & Time</th>
+            <th>kWh Reading</th>
+            <th>Hours</th>
+            <th>Watts</th>
+        </tr>
+        {% for reading in readings %}
+            <tr>
+                <td>
+                    {{ reading['Sensor'] }}
+                </td>
+                <td>
+                    {{ reading['datetime'] }}
+                </td>
+                <td>
+                    {{ reading['kWh'] }}
+                </td>
+                <td>
+                    {{ reading['Hours'] }}
+                </td>
+                <td>
+                    {{ reading['Watts'] }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
